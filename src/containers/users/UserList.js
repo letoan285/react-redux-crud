@@ -45,7 +45,7 @@ class UserList extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        users: state.userReducer
+        users: state.userReducer.users
     }
 }
 const mapDispatchToProps = (dispatch) => {

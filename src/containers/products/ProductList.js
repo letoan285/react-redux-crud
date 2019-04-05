@@ -50,7 +50,7 @@ class ProductList extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        products: state.productReducer
+        products: state.productReducer.products
     }
 }
 const mapDispatchToProps = (dispatch) => {

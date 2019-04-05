@@ -21,7 +21,7 @@ class ProductDetail extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        product: state.productReducer
+        product: state.productReducer.product
     }
 }
 const mapDispatchToProps = (dispatch) => {

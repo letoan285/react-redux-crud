@@ -20,3 +20,18 @@ export const loadUsers = (users) => {
         payload: users
     }
 }
+
+export const loadUserApi = (id) => {
+    return dispatch => {
+        return Axios.get(`http://localhost:3030/api/users/${id}`).then(res => {
+            dispatch(loadUser(res.data))
+        })
+    }
+}
+
+export const loadUser = (user) => {
+    return {
+        type: LOAD_USER,
+        payload: user
+    }
+}

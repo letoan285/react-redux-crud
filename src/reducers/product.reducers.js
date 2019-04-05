@@ -3,7 +3,10 @@ export const LOAD_PRODUCT = 'LOAD_PRODUCT';
 export const CREATE_PRODUCT= 'CREATE_PRODUCT';
 export const DELETE_PRODUCT= 'DELETE_PRODUCT';
 
-const initialState = [];
+const initialState = {
+    products: [],
+    product: {}
+};
 var findIndex = (products, id) => {
     var result = -1;
     products.forEach((product, index) => {
@@ -19,12 +22,16 @@ export const productReducer = (state = initialState, action) => {
     var { id, payload } = action;
     switch(action.type) {
         case LOAD_PRODUCTS: {
-            state = action.payload
-            return state;
+            return {
+                ...state,
+                products: action.payload
+            }
         }
         case LOAD_PRODUCT: {
-            state = action.payload
-            return state;
+            return {
+                ...state,
+                product: action.payload
+            };
         }
         case DELETE_PRODUCT: {
             index = findIndex(state, id);
@@ -33,7 +40,9 @@ export const productReducer = (state = initialState, action) => {
         }
     
         case CREATE_PRODUCT: {
-            return [...state];
+            return {
+                ...state
+            };
         }
     }
     return state;
