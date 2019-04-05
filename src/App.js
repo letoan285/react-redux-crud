@@ -13,6 +13,10 @@ import EmployeeList from './containers/employees/EmployeeList';
 import EmployeeAdd from './containers/employees/EmployeeAdd';
 import EmployeeDetail from './containers/employees/EmployeeDetail';
 import EmployeeEdit from './containers/employees/EmployeeEdit';
+import UserList from './containers/users/UserList';
+import UserAdd from './containers/users/UserAdd';
+import UserDetail from './containers/users/UserDetail';
+import UserEdit from './containers/users/UserEdit';
 
 class App extends Component {
   render() {
@@ -26,6 +30,8 @@ class App extends Component {
           <li><Link to="/categories/add">Category Add</Link></li>
           <li><Link to="/employees">Employees List</Link></li>
           <li><Link to="/employees/add">Employees Add</Link></li>
+          <li><Link to="/users">Users List</Link></li>
+          <li><Link to="/user/add">Users Add</Link></li>
         </ul>
           <Route path="/" exact component={ProductList}/>
           <Route path="/products" exact component={ProductList}/>
@@ -40,6 +46,10 @@ class App extends Component {
           <Route path="/employees/add" component={EmployeeAdd}/>
           <Route path="/employees/detail/:id" component={EmployeeDetail}/>
           <Route path="/employees/edit/:id" component={EmployeeEdit}/>
+          <Route path="/users" exact component={UserList}/>
+          <Route path="/users/add" component={UserAdd}/>
+          <Route path="/users/detail/:id" component={UserDetail}/>
+          <Route path="/users/edit/:id" component={UserEdit}/>
         </BrowserRouter>
       </div>
     );
